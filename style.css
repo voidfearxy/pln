@@ -1,0 +1,317 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Kutu modelini düzeltir */
+    }
+
+    body {
+        background: #191919;
+        color: white;
+        font-family: Arial, sans-serif; /* Yazı tipi */
+    }
+
+    img {
+        width: 100%;
+        height: auto; /* Resmin orantılı kalmasını sağlar */
+    }
+
+    .head {
+        font-size: 15px;
+        margin: 0 auto;
+        width: 90%;
+        border-bottom: 1px solid rgb(71, 71, 71);
+    }
+
+    .head h1 {
+        padding: 5% 0 1%;
+    }
+
+    .time {
+    display: flex;
+    justify-content: space-between; /* İçerikleri yatay olarak hizala ve aralarında boşluk bırak */
+    flex-wrap: wrap; /* Gerekirse içerikleri alt alta sırala */
+    margin: 0 auto;
+    }
+
+    .flip {
+        background-color: #222;
+        color: white;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 20px;
+        text-align: center;
+        min-width: 50px;
+        font-size: 2em;
+        box-shadow: 0 0 10px 0 #000;
+        flex: 1px; /* Esneklik ayarı */
+                display: flex;
+        justify-content: center;
+        align-items: center; /* Bu satır içeriği dikey olarak ortalar */
+        
+    }
+
+    #digital-clock {
+        display: flex;
+        flex-wrap: wrap;
+        width: 20%;
+        height: 1px;
+    }
+
+    #digital-clock #date {
+        flex-basis: 100%;
+        width: auto;
+        font-size: 30px;
+    }
+
+    .gorevler {
+        padding-left: 5%;
+        width: 50%;
+        font-size: 15px;
+        overflow: auto; /* Kaydırma çubuğu ekleme */
+    }
+
+    .gorevler ul li {
+        list-style: none;
+        margin: 1px 0px 0px 0px;
+        border-bottom: 1px solid rgb(0, 0, 0)
+    }
+
+    li textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        height: 25px;
+        font-size: 16px;
+        resize: none;
+        color: white;
+        min-height: 30px;
+        max-height: 80px;
+        margin-bottom: 2%;
+    }
+
+    /* Kaydırma çubuğu stilleri */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+    }
+
+    #not {
+        resize: none;
+        margin-top: 5px;
+        font-size: 16px;
+        padding: 10px;
+        background: none;
+        color: white;
+        border: none;
+        outline: none;
+        min-height: 250px;
+        box-shadow: 0 0 10px 0 #000;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+
+
+
+    .gorevler, .not {
+    padding: 0 10px; 
+    }
+
+
+    .gorevler textarea:first-child::first-line, .not textarea:first-child::first-line {
+        color: rgb(209, 182, 247);
+        font-size: 18px;
+        
+    }
+
+
+    .asistan, .kitap-okuma-takibi{
+        background-color: #222;
+        color: white;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 20px;
+        min-width: 96%;
+        max-width: 96%;
+        text-align: center;
+        font-size: 15px;
+        max-height: 100px;
+        box-shadow: 0 0 10px 0 #000;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Bu satır içeriği dikey olarak ortalar */
+        
+
+    }
+    .kitap-okuma-takibi {
+        background-color: #222;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        min-width: 97.5%; /* Genişlik %100 olarak ayarlanıyor */
+        text-align: center;
+        font-size: 15px;
+        max-height: 100px;
+        box-shadow: 0 0 10px 0 #000;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Bu satır içeriği dikey olarak ortalar */
+
+    }
+    
+    
+    #kitap-iconu {
+        font-size: 30px; /* İkon boyutunu büyüt */
+        padding-right: 5px;
+    }
+    
+    .hedef {
+        margin: 5px ;
+        cursor: pointer;
+        font-size: 18px; /* Hedef yazı boyutunu büyüt */
+        color: #333; /* Koyu yazı rengi */
+        background-color: #e9ecef;
+        padding: 3px 7px;
+        border-radius: 5px;
+    }
+
+    #hedefSayıİnp{
+        border: none;
+        outline: none;
+    }
+    
+    .butonlar button {
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .butonlar button:hover {
+        background-color: #9fadbb;
+    }
+
+    
+    @media screen and (max-width: 1030px) {
+        .gorevler {
+            width: 70%;
+        }
+    
+    
+        .not {
+            padding-top: 5%;
+            min-width: 50%;
+            
+        }
+
+        .not, .kitap-okuma-takibi, .asistan, #digital-clock {
+            width: 25%;
+        }
+        
+    }
+    
+
+@media screen and (max-width: 900px) {
+    .kitap-okuma-takibi, .asistan, #digital-clock, #calendar, #hour, #minute {
+        font-size: 15px;
+    }
+    #digital-clock{
+        min-width: 100%;
+
+    }
+    #hour, #minute{
+        min-width: 48%;
+
+    }
+    #date, #calendar, .asistan{
+        max-width: 48%;
+        min-width: 48%;
+    }
+
+    .flip{
+        flex: none; /* Esneklik ayarı */
+
+    }
+    .gorevler{
+        margin-top: 35%;
+        min-width: 100%;
+    }
+    .kitap-okuma-takibi{
+
+    }
+
+}
+
+
+@media screen and (max-width: 690px) {
+
+    .gorevler{
+        margin-top: 40%;
+    }
+
+}
+
+@media screen and (max-width: 590px) {
+
+    .gorevler{
+        margin-top: 50%;
+    }
+
+    .time{
+        margin: 0 auto;
+    }
+    #hour, #minute{
+        min-width: 47%;
+
+    }
+    #date, #calendar, .asistan{
+        max-width: 47%;
+        min-width: 47%;
+    }
+    .kitap-okuma-takibi{
+        min-width: 96%;
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .gorevler{
+        margin-top: 65%;
+    }
+
+    .time{
+        margin: 0 auto;
+    }
+    #hour, #minute{
+        min-width: 46%;
+
+    }
+    #date, #calendar, .asistan{
+        max-width: 46%;
+        min-width: 46%;
+    }
+    .kitap-okuma-takibi{
+        min-width: 95%;
+    }
+    .not{
+        width: 100%;
+    }
+
+}

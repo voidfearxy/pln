@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planlayıcı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
+
+    <link rel="icon" type="image/x-icon" href="Res/_e120087a-75ba-4c5c-ba52-25cc66b90479.png">
+
+</head>
+<body>
+
+
+    <img src="Res/Ekran görüntüsü 2024-01-07 020226.png" alt="">
+    <div class="head">
+        <h1>Haftalık Planlayıcı</h1>
+    </div>
+    
+    <div class="time">
+        <div id="digital-clock"> 
+            <div class="flip" id="hour"></div>
+            <div class="flip" id="minute"></div>
+            <div class="flip" id="date">
+                <span id="calendar"></span>
+            </div>
+            <div class="asistan"></div>
+            <div class="kitap-okuma-takibi">
+                <i class="fa-light fa-book" id="kitap-iconu"></i>
+                <div class="hedef">
+                    <span id="okunan">0</span>/<span id="hedefSayıİnp" contenteditable="true" oninput="kontrolHedef(this)">0</span>
+                </div>
+                <div class="butonlar">
+                    <button onclick="degistirMiktar(-1)">-</button>
+                    <button onclick="degistirMiktar(1)">+</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="gorevler">
+            <ul>
+                <li><textarea oninput="gunleriyaz(this)" oninput="yildizEkle(this)" name="" id="" cols="30" rows="1" placeholder="Pazartesi için görev yok"></textarea></li>
+                <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="Salı için görev yok"></textarea></li>
+                <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="Çarşamba için görev yok"></textarea></li>
+                <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="Perşembe için görev yok"></textarea></li>
+                <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="Cuma için görev yok"></textarea></li>
+                <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="Cumartesi için görev yok"></textarea></li>
+                <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="pazar için görev yok"></textarea></li>
+            </ul>
+        </div>
+        <div class="not">
+            <textarea name="" id="not" cols="25" rows="15" oninput="eklemeYap(this)"></textarea>
+        </div>
+<script src="index.js"></script>
+
+</body>
+</html>
