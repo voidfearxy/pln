@@ -27,6 +27,8 @@
     }
 
     .time {
+        padding: 30px;
+
     display: flex;
     justify-content: space-between; /* İçerikleri yatay olarak hizala ve aralarında boşluk bırak */
     flex-wrap: wrap; /* Gerekirse içerikleri alt alta sırala */
@@ -55,6 +57,7 @@
         flex-wrap: wrap;
         width: 20%;
         height: 1px;
+
     }
 
     #digital-clock #date {
@@ -63,18 +66,33 @@
         font-size: 30px;
     }
 
+
+    
     .gorevler {
-        padding-left: 5%;
-        width: 50%;
-        font-size: 15px;
-        overflow: auto; /* Kaydırma çubuğu ekleme */
+        overflow: hidden;
+        width: 55%; /* Gösterilecek toplam genişlik */
+        
+
+    }
+    
+    .gorevler ul {
+        display: flex;
+        width: 600%; /* Toplam içerik genişliği */
+        transition: transform 0.5s ease-in-out;
+
+    }
+    
+    .gorevler ul li {
+        width: 100%; /* Her öğe için genişlik */
+        /* Diğer stiller */
+        margin-right: 1%; /* Sağ ve sol kenarlarında 10px boşluk */
+        padding: 10px;
+        text-align: center; /* İçerikleri ortala */
+        box-shadow: 0 0 10px 0 #000;
+
     }
 
-    .gorevler ul li {
-        list-style: none;
-        margin: 1px 0px 0px 0px;
-        border-bottom: 1px solid rgb(0, 0, 0)
-    }
+    
 
     li textarea {
         width: 100%;
@@ -85,7 +103,7 @@
         font-size: 16px;
         resize: none;
         color: white;
-        min-height: 30px;
+        min-height: 250px;
         max-height: 80px;
         margin-bottom: 2%;
     }
@@ -162,7 +180,7 @@
         color: white;
         border-radius: 5px;
         padding: 10px;
-        min-width: 97.5%; /* Genişlik %100 olarak ayarlanıyor */
+        min-width: 96%; /* Genişlik %100 olarak ayarlanıyor */
         text-align: center;
         font-size: 15px;
         max-height: 100px;
@@ -207,12 +225,25 @@
         background-color: #9fadbb;
     }
 
+    @media screen and (max-width: 1150px) {
+
+        .gorevler{
+            width: 40%;
+        }
+    
+    }
     
     @media screen and (max-width: 1030px) {
         .gorevler {
             width: 70%;
+            padding: 10px 5% 0 5%;
+            margin: 0 auto;
+
         }
-    
+        #digital-clock{
+            padding: 1px 0 0 10px;
+            margin: 0 auto;
+        }
     
         .not {
             padding-top: 5%;
@@ -228,8 +259,8 @@
     
 
 @media screen and (max-width: 900px) {
-    .kitap-okuma-takibi, .asistan, #digital-clock, #calendar, #hour, #minute {
-        font-size: 15px;
+    .kitap-okuma-takibi, .asistan, #digital-clock, #calendar, #hour, #minute, .asistan {
+        font-size: 20px;
     }
     #digital-clock{
         min-width: 100%;
@@ -243,17 +274,36 @@
         max-width: 48%;
         min-width: 48%;
     }
+    .asistan{
+        min-width: 97.5%;
+    }
 
     .flip{
         flex: none; /* Esneklik ayarı */
 
     }
     .gorevler{
-        margin-top: 35%;
+        margin-top: 30%;
         min-width: 100%;
     }
     .kitap-okuma-takibi{
+        min-width: 48%;
+    }
 
+}
+
+@media screen and (max-width: 830px) {
+
+    .gorevler{
+        margin-top: 35%;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+
+    .gorevler{
+        margin-top: 35%;
     }
 
 }
@@ -262,7 +312,14 @@
 @media screen and (max-width: 690px) {
 
     .gorevler{
-        margin-top: 40%;
+        margin-top: 45%;
+    }
+
+}
+@media screen and (max-width: 630px) {
+
+    .gorevler{
+        margin-top: 50%;
     }
 
 }
@@ -280,12 +337,57 @@
         min-width: 47%;
 
     }
-    #date, #calendar, .asistan{
+    #date, #calendar {
         max-width: 47%;
         min-width: 47%;
     }
     .kitap-okuma-takibi{
+        min-width: 47%;
+        max-width: 47%;
+    }
+    .head{
+        font-size: 14px;
+    }
+    .asistan{
         min-width: 96%;
+    }
+}
+
+@media screen and (max-width: 535px) {
+
+    .gorevler{
+        margin-top: 53%;
+    }
+
+    #calendar, .asistan{
+        font-size: 15px;
+    }
+
+
+    .gorevler ul {
+        width: 600%;
+    }
+    .asistan{
+        min-width: 96%;
+    }
+
+}
+
+@media screen and (max-width: 490px) {
+
+    .gorevler{
+        margin-top: 60%;
+    }
+    #kitap-iconu {
+        font-size: 25px;
+    }
+    .kitap-okuma-takibi, .hedef{
+        font-size: 15px ;
+    }
+    .butonlar button{
+        height: 25px;
+        width: 25px;
+        font-size: 12px;
     }
 
 }
@@ -293,7 +395,7 @@
 @media screen and (max-width: 430px) {
 
     .gorevler{
-        margin-top: 65%;
+        margin-top: 67%;
     }
 
     .time{
@@ -303,15 +405,83 @@
         min-width: 46%;
 
     }
-    #date, #calendar, .asistan{
+    #date, #calendar{
         max-width: 46%;
         min-width: 46%;
     }
+    .asistan{
+        min-width: 96%;
+    }
     .kitap-okuma-takibi{
-        min-width: 95%;
+        min-width: 47%;
     }
     .not{
         width: 100%;
+    }
+
+    .head{
+        font-size: 12px;
+    }
+    #calendar{
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+
+    .gorevler{
+        margin-top: 80%;
+    }
+    #kitap-iconu {
+        font-size: 20px;
+    }
+    .kitap-okuma-takibi, .hedef{
+        font-size: 10px ;
+    }
+    .butonlar button{
+        height: 22px;
+        width: 22px;
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width: 355px) {
+
+    .gorevler{
+        margin-top: 100%;
+    }
+    #date{
+        margin-left: auto;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .gorevler{
+        margin-top: 95%;
+    }
+
+    .time{
+        margin: 0 auto;
+    }
+    #hour, #minute{
+        min-width: 45%;
+
+    }
+    #date, #calendar {
+        max-width: 45%;
+        min-width: 45%;
+    }
+    .kitap-okuma-takibi{
+        font: 0.1em sans-serif;
+    }
+    .head{
+        font-size: 14px;
+    }
+    .asistan{
+        min-width: 96%;
     }
 
 }
