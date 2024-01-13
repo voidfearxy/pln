@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const saat = new Date().getHours();
     let zamanMesaji = '';
     if (saat < 6) {
-        zamanMesaji = 'Bu saatte hala ayaktasınız, iyi geceler,';
+        zamanMesaji = 'iyi geceler,';
     } else if (saat < 12) {
         zamanMesaji = 'Günaydın';
     } else if (saat < 18) {
@@ -183,3 +183,51 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("hedefSayıİnp").textContent = hedef;
     }
 });
+
+
+let mevcutKaydirma = 0;
+let baslangicPozisyonu = 0;
+let surukleniyor = false;
+
+function kaydir(yon) {
+    const gorevlerListesi = document.querySelector('.gorevler ul');
+    const gorevSayisi = gorevlerListesi.childElementCount;
+
+    mevcutKaydirma = (mevcutKaydirma + yon + gorevSayisi) % gorevSayisi;
+
+    const yeniPozisyon = mevcutKaydirma * -14;
+    gorevlerListesi.style.transform = `translateX(${yeniPozisyon}%)`;
+}
+
+function suruklemeBaslat(e) {
+    baslangicPozisyonu = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    surukleniyor = true;
+}
+
+function suruklemeBirak() {
+    surukleniyor = false;
+}
+
+function suruklemeYap(e) {
+    if (!surukleniyor) return;
+    e.preventDefault();
+    const mevcutPozisyon = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    const kaydirmaMiktari = baslangicPozisyonu - mevcutPozisyon;
+
+    if (kaydirmaMiktari > 50) { // Sağa kaydırma
+        kaydir(1);
+        suruklemeBirak();
+    } else if (kaydirmaMiktari < -50) { // Sola kaydırma
+        kaydir(-1);
+        suruklemeBirak();
+    }
+}
+
+const gorevlerListesi = document.querySelector('.gorevler ul');
+gorevlerListesi.addEventListener('mousedown', suruklemeBaslat);
+gorevlerListesi.addEventListener('mouseup', suruklemeBirak);
+gorevlerListesi.addEventListener('mouseleave', suruklemeBirak);
+gorevlerListesi.addEventListener('mousemove', suruklemeYap);
+gorevlerListesi.addEventListener('touchstart', suruklemeBaslat);
+gorevlerListesi.addEventListener('touchend', suruklemeBirak);
+gorevlerListesi.addEventListener('touchmove', suruklemeYap);
