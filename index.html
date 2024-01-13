@@ -25,7 +25,6 @@
             <div class="flip" id="date">
                 <span id="calendar"></span>
             </div>
-            <div class="asistan"></div>
             <div class="kitap-okuma-takibi">
                 <i class="fa-light fa-book" id="kitap-iconu"></i>
                 <div class="hedef">
@@ -36,9 +35,9 @@
                     <button onclick="degistirMiktar(1)">+</button>
                 </div>
             </div>
+            <div class="asistan"></div>
             
         </div>
-
         <div class="gorevler">
             <ul>
                 <li><textarea oninput="gunleriyaz(this)" oninput="yildizEkle(this)" name="" id="" cols="30" rows="1" placeholder="Pazartesi için görev yok"></textarea></li>
@@ -49,9 +48,12 @@
                 <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="Cumartesi için görev yok"></textarea></li>
                 <li><textarea oninput="gunleriyaz(this)" name="" id="" cols="30" rows="1" placeholder="pazar için görev yok"></textarea></li>
             </ul>
+
         </div>
+        
+        
         <div class="not">
-            <textarea name="" id="not" cols="25" rows="15" oninput="eklemeYap(this)"></textarea>
+            <textarea name="" id="not" cols="25" rows="15" oninput="eklemeYap(this)" placeholder="Notlar"></textarea>
         </div>
 <script src="index.js"></script>
 
