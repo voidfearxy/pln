@@ -89,6 +89,7 @@
         padding: 10px;
         text-align: center; /* İçerikleri ortala */
         box-shadow: 0 0 10px 0 #000;
+        list-style: none;
 
     }
 
